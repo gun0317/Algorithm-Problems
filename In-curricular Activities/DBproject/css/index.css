@@ -1,0 +1,96 @@
+@font-face {
+  font-family: the;
+  src: url(../font/THEOegyein.ttf);
+}
+
+@font-face {
+  font-family: hun;
+  src: url(../font/훈새마을운동R.ttf);
+}
+
+body {
+  background-color: #ffc952;
+  font-family: the, sans-serif;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.login-form {
+  margin-top: 2%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.title {
+  margin-top: 20%;
+  text-align: center;
+}
+
+.title>h1 {
+  font-size: 55px;
+  font-family: hun, sans-serif;
+  font-stretch: extra-expanded;
+  font-weight: bold;
+}
+
+img {
+  width: 100%;
+  height: 33.3%;
+}
+
+.food-left {
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.food-right {
+  margin-right: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.register{
+   margin-top: 5%;
+   padding-bottom: 5%;
+   padding-left: 18%;
+   padding-right: 18%;
+}
+
+.register  hr{
+     border-width: 2px;
+}
+
+.slide{
+
+  background-color: #FDD692;
+
+}
+
+.customized {
+    position: absolute;
+    right: 15%;
+    bottom: 20px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: black;
+    text-align: center;
+}
+
+#first, #second, #third{
+    font-size: 50px;
+}
+
+.center{
+    margin-bottom: 14%; 
+}

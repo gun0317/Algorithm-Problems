@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2014312971</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+</head>
+
+<body>
+    <div class="container register">
+        <h2> 비밀번호 변경 </h2>
+        <hr>
+        <br>
+        <form action="changePWD.jsp" onsubmit="return beforeSubmit();" method="post">
+
+            <div class="form-group row">
+                <label for="pwd" class="col-sm-3 col-form-label">비밀번호</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="password" required oninvalid="this.setCustomValidity('비밀번호를 입력하세요')" oninput="setCustomValidity('')" onkeyup="isSame()">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="pwd_check" class="col-sm-3 col-form-label">비밀번호 확인</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="pwd_check" name="pwd_check" placeholder="password" required oninvalid="this.setCustomValidity('비밀번호를 다시 입력해주세요')" oninput="setCustomValidity('')" onkeyup="isSame()">
+                </div>
+                <div class="col-sm-3"></div>
+                <div class="col-sm-9"><span id="same"></span></div>
+            </div>
+            <br>
+
+            <br>
+
+            <button type="submit" class="btn btn-primary">&nbsp;&nbsp;&nbsp;&nbsp;변경&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        </form>
+    </div>
+    <script>
+
+        var same = 0;
+        function isSame() {
+            if (document.getElementById('pwd').value != '' && document.getElementById('pwd_check').value != '') {
+                if (document.getElementById('pwd').value == document.getElementById('pwd_check').value) {
+                    document.getElementById('same').innerHTML = '비밀번호가 일치합니다.';
+                    document.getElementById('same').style.color = 'green';
+                    same = 1;
+                } else {
+                    document.getElementById('same').innerHTML = '비밀번호가 일치하지 않습니다.';
+                    document.getElementById('same').style.color = 'red';
+                    same = 0;
+                }
+            } else {
+                document.getElementById('same').innerHTML = '';
+                same = 0;
+            }
+        }
+        function clearValidity() {
+            document.getElementById('male').setCustomValidity('');
+        }
+        function beforeSubmit(){
+
+          if(same == 0){
+            alert("비밀번호가 일치하지 않습니다.");
+            return false;
+          }
+          else{
+            return true;
+          }
+
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

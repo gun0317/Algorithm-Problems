@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+          <link rel="stylesheet" href="css/bootstrap.min.css">
+            <link rel="stylesheet" href="css/index.css" type="text/css"></head>
+            <body>
+
+              <div class="col-6" style="text-align:center;margin-left:25%;margin-bottom:15%;">
+                <hr>
+                  <b style="font-size:20px;">내가 관리하는 식당 추가하기</b>
+                  <br>
+                    <p style="font-size:10px;">
+                      query 문:<br>INSERT INTO food_종류(mgrId,상호)
+                        <br>VALUES(현재 관리자 id, 상호)<br>+<br>
+                        INSERT INTO store(상호, 위치)
+                          <br>VALUES(상호, 위치)<br>
+                            <br>
+                              <b>form 형식으로 데이터를 전달하면 동적으로 DB에 추가</b>
+                            </p>
+                            <hr>
+
+                              <form action="add.jsp" method="post">
+                                <select name="foodType">
+                                  <option value="kor" selected="selected">한식</option>
+                                  <option value="jap">일식</option>
+                                  <option value="chin">중식</option>
+                                  <option value="west">양식</option>
+                                  <option value="bun">분식</option>
+                                </select>
+                                <div class="login-form">
+                                  <div class="form-group">
+                                    <div class="form-group row">
+                                        <label for="id" class="col-sm-3 col-form-label">상호</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="id" name="id" placeholder="상호 명" required oninvalid="this.setCustomValidity('상호를 입력하세요')" oninput="setCustomValidity('')">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="pwd" class="col-sm-3 col-form-label">위치</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="pwd" name="pwd" placeholder="위치 정보" required oninvalid="this.setCustomValidity('위치를 입력하세요')" oninput="setCustomValidity('')">
+                                        </div>
+                                    </div>
+                                      <br>
+                                        <button type="submit" class="btn btn-secondary btn-block">식당 추가</button>
+                                        <button type="button" class="btn btn-info btn-block" onClick="location.href='index.html';">로그아웃</button>
+                                      </div>
+                                    </form>
+
+                                  </div>
+                                  <div>
+
+                                    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+                                    <script src="js/bootstrap.min.js"></script>
+                                  </body>
+
+                                </html>
