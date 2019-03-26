@@ -1,0 +1,15 @@
+Work Through In 'pyimagesearch'
+
+1. Ubuntu 18.04: How to install OpenCV --DONE
+https://www.pyimagesearch.com/2018/05/28/ubuntu-18-04-how-to-install-opencv/
+
+(1-2). Displaying a video feed with OpenCV and Tkinter --Skipped
+https://www.pyimagesearch.com/2016/05/30/displaying-a-video-feed-with-opencv-and-tkinter/
+
+2. Deep Learning with OpenCV --On Progress
+by Adrian Rosebrock on August 21, 2017
+https://www.pyimagesearch.com/2017/08/21/deep-learning-with-opencv/
+
+2-1. Understanding Convolution in Deep Learning --On Progress
+2015-03-26 by Tim Dettmers
+http://timdettmers.com/2015/03/26/convolution-deep-learning/
