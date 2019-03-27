@@ -19,3 +19,7 @@ http://timdettmers.com/2015/03/26/convolution-deep-learning/
 2016.08.24 by San's Dev Story
 https://saneblog.tistory.com/category/Machine Learning
 
+3. OpenCV Tutorial: A Guide to Learn OpenCV
+by Adrian Rosebrock on July 19, 2018 in Tutorials
+https://www.pyimagesearch.com/2018/07/19/opencv-tutorial-a-guide-to-learn-opencv/
+
