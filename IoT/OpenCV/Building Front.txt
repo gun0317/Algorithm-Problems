@@ -1,2 +1,0 @@
-Video Streaming with Raspberry Pi Camera
-https://randomnerdtutorials.com/video-streaming-with-raspberry-pi-camera/
