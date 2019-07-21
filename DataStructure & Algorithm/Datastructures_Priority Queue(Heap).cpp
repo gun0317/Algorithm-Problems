@@ -16,6 +16,12 @@ public:
 	void init() {
 		heapSize = 0;
 	}
+	// push the new node at the last position
+	// check the parent's value and relocate its position
+	// Overall procedure: 
+	// push new node, check the heap[curIdx] and heap[parentIdx] 
+	// if heap[curIdx] > heap[parentIdx], swap and curIdx = parentIdx
+	// Finally, increase heapSize by 1.
 	void push(int item) {
 		if (heapSize + 1 == HEAP_SIZE) cout << "heap is full";
 		// Add the item to the new node
@@ -31,7 +37,10 @@ public:
 		}
 		heapSize++;
 	}
-
+	// overall procedure:
+	// return the root node and locate the last node to root
+	// and the node goes down(unlike pushing) 
+	// **heapSize can be reduced prior to these procedure.
 	void pop(int &toReturn) {
 		if (heapSize <= 0)cout << "heap is empty" << endl;
 		toReturn = heap[0];
