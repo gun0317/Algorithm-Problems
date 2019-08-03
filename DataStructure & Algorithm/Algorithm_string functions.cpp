@@ -20,7 +20,7 @@ int my_strcmp(const char* s1, const char* s2) {
 char* my_strcat(char* dest, const char* src) {
 	char* temp = dest;
 	while (*dest++ != '\0');
-	for (--dest; *src != '\0'; *dest++ = *src++);
+	my_strcpy(--dest, src);
 	return temp;
 }
 
