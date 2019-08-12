@@ -10,15 +10,15 @@ void printList(int* list) {
 
 void merge(int* list, int left, int right) {
 	int sorted[MAX_SIZE], mid = (left + right) / 2;
-	int first = left, second = mid + 1 , idx = left;
+	int cur1 = left, cur2 = mid + 1 , idx = left;
 	// merge til one side's end // 내림차순
-	while (first <= mid && second <= right) 
-		if (list[first] < list[second]) sorted[idx++] = list[first++];
-		else sorted[idx++] = list[second++];
+	while (cur1 <= mid && cur2 <= right) 
+		if (list[cur1] < list[cur2]) sorted[idx++] = list[cur1++];
+		else sorted[idx++] = list[cur2++];
 	// if one side's end came prior to another one
-	if (first <= mid)
-		for (int i = first; i <= mid; i++) sorted[idx++] = list[i];
-	else for (int i = second; i <= right; i++) sorted[idx++] = list[i];
+	if (cur1 <= mid)
+		for (int i = cur1; i <= mid; i++) sorted[idx++] = list[i];
+	else for (int i = cur2; i <= right; i++) sorted[idx++] = list[i];
 	//copying
 	for (int i = left; i <= right; i++) list[i] = sorted[i];
 }
