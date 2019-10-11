@@ -18,7 +18,8 @@ void merge(int* list, int left, int right) {
 	// if one side's end came prior to another one
 	if (cur1 <= mid)
 		for (int i = cur1; i <= mid; i++) sorted[idx++] = list[i];
-	else for (int i = cur2; i <= right; i++) sorted[idx++] = list[i];
+	else if(cur2 <= right)
+		for (int i = cur2; i <= right; i++) sorted[idx++] = list[i];
 	//copying
 	for (int i = left; i <= right; i++) list[i] = sorted[i];
 }
