@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+int s;
+
 void _swap(int &a, int &b) {
 	int temp = a;
 	a = b;
@@ -8,20 +10,23 @@ void _swap(int &a, int &b) {
 }
 int partition(int *list, int left, int right);
 void quicksort(int *list, int left, int right);
+void printList(int *list);
 
 int main() {
-	int arr[] = { 5,1,3,4,2 };
-	quicksort(arr, 0, sizeof(arr) / sizeof(arr[0]) - 1);
+	int arr[] = { 5,1,3,4,2,13,5,2,3,5,16,43,3 };
+	s = sizeof(arr) / sizeof(arr[0]) - 1;
+	quicksort(arr, 0, s);
 	for (int a : arr) printf("%d ", a);
 
 	return 0;
 }
 
 int partition(int *list, int left, int right) {
-	int pivot = list[left], low = left + 1, high = right; // pivot is leftmost one
+	int pivot = list[left]; // pivot is middle one
+	int low = left - 1, high = right;
 
 	while (true) {
-		while (low < right && list[low] < pivot) low++;
+		while (low < right && list[low] <= pivot) low++;
 		while (high > left && list[high] >= pivot) high--;
 		if (low < high) _swap(list[low], list[high]);
 		else break;
@@ -34,7 +39,13 @@ int partition(int *list, int left, int right) {
 void quicksort(int *list, int left, int right) {
 	if (left < right) {
 		int mid = partition(list, left, right);
+		printList(list);
 		quicksort(list, left, mid - 1);
 		quicksort(list, mid + 1, right);
 	}
+}
+
+void printList(int *list) {
+	for (int i = 0; i <= s; i++) printf("%d ", list[i]);
+	cout << endl;
 }
