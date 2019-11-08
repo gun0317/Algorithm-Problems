@@ -1,5 +1,8 @@
 #include <iostream>
-
+///////////////////////
+///Cycle Detection/////
+//Using Indegree info//
+///////////////////////
 using namespace std;
 
 typedef struct NODE {

@@ -25,7 +25,7 @@ void merge(int* list, int left, int right) {
 }
 
 void mergeSort(int* list, int left, int right) {
-	if (left < right) {	// <? <=?
+	if (left < right) {	// <
 		int mid = (left + right) / 2;
 		mergeSort(list, left, mid);
 		mergeSort(list, mid + 1, right);

@@ -4,7 +4,10 @@
 using namespace std;
 int mystrcmp(const char*s1, const char*s2);
 void mystrcpy(char* dest, const char* src);
-
+////////////////////////////////////
+//hash table for string as a key////
+//plus deletion of a node///////////
+////////////////////////////////////
 template <typename t>
 void _swap(t &a, t &b) {
 	t temp = a;

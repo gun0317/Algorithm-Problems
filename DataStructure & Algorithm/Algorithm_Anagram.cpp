@@ -1,7 +1,11 @@
 #include <iostream>
 #include <string.h>
 using namespace std;
-
+///////////////////////
+//Anagram algorithm////
+//using backtracking///
+//for combination//////
+///////////////////////
 string str = "abcbabbcbabcba";
 int target_length = 0, ans = 0;
 

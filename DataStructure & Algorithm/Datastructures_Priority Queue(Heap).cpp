@@ -1,6 +1,5 @@
 ////////////////////////
 //////PriorityQueue/////
-///reference:SWExpert///
 ////////20190720////////
 /////////YGun///////////
 ////////////////////////
@@ -22,6 +21,7 @@ public:
 	// push new node, check the heap[curIdx] and heap[parentIdx] 
 	// if heap[curIdx] > heap[parentIdx], swap and curIdx = parentIdx
 	// Finally, increase heapSize by 1.
+	// Max heap
 	void push(int item) {
 		if (heapSize + 1 == HEAP_SIZE) cout << "heap is full";
 		// Add the item to the new node

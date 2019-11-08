@@ -5,7 +5,6 @@ using namespace std;
 // reviewing: 
 // done: string functions, strtoint, inttostr, mergeSort, binarySearch, Priority Queue(max heap), Hash
 
-// SWAP anything!
 template <typename _t>
 void _swap(_t &a, _t &b) {
 	_t temp = a;

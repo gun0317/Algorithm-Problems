@@ -1,7 +1,9 @@
 #define MAX_NODES 500000
 #include <iostream>
 using namespace std;
-
+/////////////////////////////////
+//sorting with multiple columns//
+/////////////////////////////////
 typedef struct grade {
 	// score: bigger the better, rating: smaller the better. **rating comes first**
 	int score, rating;

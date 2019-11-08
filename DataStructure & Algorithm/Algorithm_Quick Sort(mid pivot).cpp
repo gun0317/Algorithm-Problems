@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
-
+///////////////////
+//Quick Sort for///
+//Mid Pivot////////
+///////////////////
 int s;
 void _swap(int &a, int &b);
 void myQsort(int *list, int left, int right);
