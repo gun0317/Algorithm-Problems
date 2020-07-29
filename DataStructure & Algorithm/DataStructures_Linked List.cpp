@@ -4,7 +4,6 @@ using namespace std;
 //////////////////////
 //Double Linked List//
 //Using static alloc//
-//20190714 YGun///////
 //////////////////////
 
 //push(item,position), pop(position), print_all()
