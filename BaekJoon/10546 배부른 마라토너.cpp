@@ -1,31 +1,31 @@
-//#include <iostream>
-//#include <map>
-//#include <string>
-//using namespace std;
-//map <string, int> names;
-//string str;
-//
-//int main() {
-//	int N; cin >> N;
-//	//Âü°¡ÀÚ ÀÌ¸§À» ÀÔ·Â¹Ş°í map¿¡ ÀúÀå. key´Â ÀÌ¸§, value´Â 1·Î
-//	for (int i = 0; i < N; i++) {
-//		cin >> str;
-//		names[str]++;
-//	}
-//
-//	//¿ÏÁÖÀÚ ÀÌ¸§À» ÀÌ¸§À» ÀÔ·Â ¹ŞÀ¸¸é¼­ erase. ¹Ì¿ÏÁÖÀÚ¸¸ ³²°Ô.
-//	for (int i = 0; i < N - 1; i++) {
-//		cin >> str;
-//		//counted¿¡ µ¿¸íÀÌÀÎÀÇ ¼ö¸¦ ÀúÀå
-//		int counted = names[str];
-//		names.erase(str);	//ÇØ´ç ÀÌ¸§À» ½ÏÁö¿üÀ¸´Ï
-//		for (int j = 0; j < counted-1; j++) {	//µ¿¸íÀÌÀÎ ¼ö -1 ¸¸Å­ ´Ù½Ã names¿¡ ÀúÀå
-//			names[str]++;
-//		}
-//	}
-//	
-//	cout << names.begin()->first << endl;
-//
-//
-//	return 0;
-//}
+#include <iostream>
+#include <map>
+#include <string>
+using namespace std;
+map <string, int> names;
+string str;
+
+int main() {
+	int N; cin >> N;
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·Â¹Ş°ï¿½ mapï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. keyï¿½ï¿½ ï¿½Ì¸ï¿½, valueï¿½ï¿½ 1ï¿½ï¿½
+	for (int i = 0; i < N; i++) {
+		cin >> str;
+		names[str]++;
+	}
+
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½é¼­ erase. ï¿½Ì¿ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½.
+	for (int i = 0; i < N - 1; i++) {
+		cin >> str;
+		//countedï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		int counted = names[str];
+		names.erase(str);	//ï¿½Ø´ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		for (int j = 0; j < counted-1; j++) {	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ -1 ï¿½ï¿½Å­ ï¿½Ù½ï¿½ namesï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			names[str]++;
+		}
+	}
+	
+	cout << names.begin()->first << endl;
+
+
+	return 0;
+}
