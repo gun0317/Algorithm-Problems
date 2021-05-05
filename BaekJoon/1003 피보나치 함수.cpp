@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 int zeros, ones;
-int fib
+int fib;
+int fibTable[100];
 
 int fibonacci(int n) {
 	if (n == 0)
