@@ -1,57 +1,57 @@
-//#include <iostream>
-//#include <stack>
-//#define pair pair <int,int>
-//using namespace std;
-//
-////mapÀº ¹èÃß ±×·¡ÇÁ ±×´ë·Î ÀúÀå, toVisitÀº ¹æ¹®ÇØ¾ßÇÏ´Â ¹èÃß´Â 1, ¹æ¹®Çß´ø ¹èÃß´Â 0À¸·Î ÇØ¼­ Áßº¹ ¹æ¹®À» ¸·À½
-//int map[60][60], toVisit[60][60], M, N, K;
-//int moves[4][2] = { {1,0},{0,1},{-1,0},{0,-1} };
-//
-//void DFS(pair vtx) {
-//
-//	stack <pair> s;
-//	s.push(vtx);
-//	toVisit[vtx.first][vtx.second] = 0;
-//
-//	while (!s.empty()) 
-//	{
-//		pair cur = s.top();
-//		s.pop();
-//
-//		for (int k = 0; k < 4; k++) {
-//			//newX¿Í newY, moves´Â »óÇÏÁÂ¿ì ÇÑÄ­¾¿¸¸ ¿òÁ÷ÀÎ´Ù´Â Á¶°ÇÀ» ¹Ý¿µ
-//			int newX = cur.first + moves[k][0];
-//			int newY = cur.second + moves[k][1];
-//			//»óÇÏÁÂ¿ì boundary check && ¹æ¹®ÇØ¾ßÇÏ´Â ¹èÃßÀÌ¸é ¹æ¹®. ÀÌ·±½ÄÀ¸·Î ¸ðµç ¹èÃßµéÀ» ¹æ¹®ÇÏµÇ connected componentÀÇ °¹¼ö¸¦ main()¿¡¼­ Ä«¿îÆ®
-//			if (toVisit[newX][newY] && newX >= 0 && newY >= 0 && newX < M && newY < N) {
-//				toVisit[newX][newY] = 0;
-//				s.push(make_pair(newX, newY));
-//			}
-//		}
-//	}
-//}
-//
-//int main() {
-//	int T;
-//	cin >> T;
-//	while (T--) 
-//	{
-//		int x, y,cnt = 0;
-//		cin >> M >> N >> K;
-//		for (int i = 0; i < K; i++) {
-//			cin >> x >> y;
-//			map[x][y] = 1;
-//			toVisit[x][y] = 1;
-//		}
-//		
-//		//¼­·Î ¿¬°áµÇ¾îÀÖÁö¾ÊÀº connected component¸¦ ¸ðµÎ µ¹±âÀ§ÇØ ¹Ýº¹¹® »ç¿ë
-//		for (int i = 0; i < M; i++) 
-//			for (int j = 0; j < N; j++) 
-//				if (toVisit[i][j]) {
-//					cnt++;
-//					DFS(make_pair(i, j));
-//				}
-//		cout << cnt << endl;
-//	}
-//	return 0;
-//}
+#include <iostream>
+#include <stack>
+#define pair pair <int,int>
+using namespace std;
+
+//mapï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½×´ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, toVisitï¿½ï¿½ ï¿½æ¹®ï¿½Ø¾ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ß´ï¿½ 1, ï¿½æ¹®ï¿½ß´ï¿½ ï¿½ï¿½ï¿½ß´ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¼ï¿½ ï¿½ßºï¿½ ï¿½æ¹®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+int map[60][60], toVisit[60][60], M, N, K;
+int moves[4][2] = { {1,0},{0,1},{-1,0},{0,-1} };
+
+void DFS(pair vtx) {
+
+	stack <pair> s;
+	s.push(vtx);
+	toVisit[vtx.first][vtx.second] = 0;
+
+	while (!s.empty()) 
+	{
+		pair cur = s.top();
+		s.pop();
+
+		for (int k = 0; k < 4; k++) {
+			//newXï¿½ï¿½ newY, movesï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â¿ï¿½ ï¿½ï¿½Ä­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Î´Ù´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¿ï¿½
+			int newX = cur.first + moves[k][0];
+			int newY = cur.second + moves[k][1];
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Â¿ï¿½ boundary check && ï¿½æ¹®ï¿½Ø¾ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½æ¹®. ï¿½Ì·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ßµï¿½ï¿½ï¿½ ï¿½æ¹®ï¿½Ïµï¿½ connected componentï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ main()ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½ï¿½Æ®
+			if (toVisit[newX][newY] && newX >= 0 && newY >= 0 && newX < M && newY < N) {
+				toVisit[newX][newY] = 0;
+				s.push(make_pair(newX, newY));
+			}
+		}
+	}
+}
+
+int main() {
+	int T;
+	cin >> T;
+	while (T--) 
+	{
+		int x, y,cnt = 0;
+		cin >> M >> N >> K;
+		for (int i = 0; i < K; i++) {
+			cin >> x >> y;
+			map[x][y] = 1;
+			toVisit[x][y] = 1;
+		}
+		
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ connected componentï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		for (int i = 0; i < M; i++) 
+			for (int j = 0; j < N; j++) 
+				if (toVisit[i][j]) {
+					cnt++;
+					DFS(make_pair(i, j));
+				}
+		cout << cnt << endl;
+	}
+	return 0;
+}

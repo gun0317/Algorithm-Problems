@@ -1,84 +1,84 @@
-//#include <iostream>
-//#include <string>
-//#include <math.h>
-//#define pair pair <int, int> 
-//using namespace std;
-//
-//int targetChannel, M;
-//int remote[10] = { 0, };	//°íÀå³­ ¹öÆ°Àº -1·Î Ç¥±â ³ª¸ÓÁö´Â 0
-//
-//int main() {
-//	cin >> targetChannel >> M;
-//	int temp, ans = abs(targetChannel - 100);
-//	int crit = ans;			//critÀº ¼ýÀÚ¸¦ ´©¸¥ ÈÄ Ã£´Â °Í º¸´Ù 100¿¡¼­ +,-·Î Ã£´Â°Ô ´õ ºü¸¦ ¶§ ±× ±âÁØ
-//	//input for unable buttons
-//	for (int i = 0; i < M; i++) {
-//		cin >> temp;
-//		remote[temp] = -1;
-//	}
-//	int idx = 0;
-//	int targetUp = targetChannel;
-//	int targetDown = targetChannel;
-//
-//	//using Brute Force : ¸ñÇ¥ ¼ýÀÚ¿¡¼­ +- 1¾¿ ÇØº¸¸é¼­ ¸®¸ðÄÁÀ» ´­·¯ °¡´ÉÇÑ Á¶ÇÕÀÎÁö check
-//	
-//	int upFlag = 0, downFlag = 0;	//À§·Î³ª ¾Æ·¡·Î³ª ÃÖ´Ü °ªÀ» Ã£¾Ò´ÂÁö ¿©ºÎ ±â·Ï
-//
-//
-//	while (idx < crit) {
-//		string up = to_string(targetUp);
-//		string down = to_string(targetDown);
-//		int flag = 0;	//flag´Â ÇöÀç ¸®¸ðÄÁ Ã¤³ÎÀÌ ¼ýÀÚ¸¦ ´­·¯¼­ °¡´ÉÇÑ Ã¤³ÎÀÎÁö ¿©ºÎ¸¦ ³ªÅ¸³¿
-//
-//		if (upFlag == 0)	//target Ã¤³Îº¸´Ù À§¿¡¼­ ³»·Á¿Ã ¶§ÀÇ °á°ú¸¦ ¾ÆÁ÷ ¸ø Ã£Àº °æ¿ì¸¸
-//		{
-//			//target Ã¤³Îº¸´Ù À§¿¡¼­ ³»·Á¿Ã ¶§
-//			for (int i = 0; i < up.size(); i++) {
-//				if (flag == 0)
-//					for (int j = 0; j < 10; j++) {
-//						if (remote[up[i] - 48] == -1)
-//						{
-//							flag++;
-//							break;
-//						}
-//					}
-//				else
-//					break;
-//			}
-//			//°¡´ÉÇÑ Á¶ÇÕÀÎ °æ¿ì(flag´Â ÇöÀç ¸®¸ðÄÁ Ã¤³ÎÀÌ ¼ýÀÚ¸¦ ´­·¯¼­ °¡´ÉÇÑ Ã¤³ÎÀÎÁö ¿©ºÎ¸¦ ³ªÅ¸³¿)
-//			if (flag == 0) {
-//				if (ans > up.size() + targetUp - targetChannel)
-//					ans = up.size() + targetUp - targetChannel;
-//				upFlag++;
-//			}
-//			targetUp++;
-//		}
-//		//target Ã¤³Îº¸´Ù ¾Æ·¡¿¡¼­ ¿Ã¶ó¿Ã ¶§
-//		flag = 0;
-//		for (int i = 0; i < down.size(); i++) {
-//			if (flag == 0)
-//				for (int j = 0; j < 10; j++) {
-//					if (remote[down[i] - 48] == -1)
-//					{
-//						flag++;
-//						break;
-//					}
-//				}
-//			else
-//				break;
-//		}
-//		//°¡´ÉÇÑ Á¶ÇÕÀÎ °æ¿ì
-//		if (flag == 0) {
-//			if (ans > down.size() + targetChannel - targetDown)
-//				ans = down.size() + targetChannel - targetDown;
-//			downFlag++;
-//		}
-//		if (targetDown > 0) targetDown--;
-//		if (upFlag || downFlag) break;	//À§·Îµç ¾Æ·¡·Îµç ´äÀ» Ã£Àº °æ¿ì break
-//		idx++;	//À§ È¤Àº ¾Æ·¡·Î ¿òÁ÷ÀÎ È½¼ö ±â·Ï(crit°ú ºñ±³¸¦ À§ÇØ)
-//	}
-//
-//	cout << ans;
-//
-//	return 0;
-//}
+#include <iostream>
+#include <string>
+#include <math.h>
+#define pair pair <int, int> 
+using namespace std;
+
+int targetChannel, M;
+int remote[10] = { 0, };	//ï¿½ï¿½ï¿½å³­ ï¿½ï¿½Æ°ï¿½ï¿½ -1ï¿½ï¿½ Ç¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0
+
+int main() {
+	cin >> targetChannel >> M;
+	int temp, ans = abs(targetChannel - 100);
+	int crit = ans;			//critï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 100ï¿½ï¿½ï¿½ï¿½ +,-ï¿½ï¿½ Ã£ï¿½Â°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	//input for unable buttons
+	for (int i = 0; i < M; i++) {
+		cin >> temp;
+		remote[temp] = -1;
+	}
+	int idx = 0;
+	int targetUp = targetChannel;
+	int targetDown = targetChannel;
+
+	//using Brute Force : ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ +- 1ï¿½ï¿½ ï¿½Øºï¿½ï¿½é¼­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ check
+	
+	int upFlag = 0, downFlag = 0;	//ï¿½ï¿½ï¿½Î³ï¿½ ï¿½Æ·ï¿½ï¿½Î³ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½Ò´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+
+
+	while (idx < crit) {
+		string up = to_string(targetUp);
+		string down = to_string(targetDown);
+		int flag = 0;	//flagï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½
+
+		if (upFlag == 0)	//target Ã¤ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ì¸¸
+		{
+			//target Ã¤ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+			for (int i = 0; i < up.size(); i++) {
+				if (flag == 0)
+					for (int j = 0; j < 10; j++) {
+						if (remote[up[i] - 48] == -1)
+						{
+							flag++;
+							break;
+						}
+					}
+				else
+					break;
+			}
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½(flagï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½)
+			if (flag == 0) {
+				if (ans > up.size() + targetUp - targetChannel)
+					ans = up.size() + targetUp - targetChannel;
+				upFlag++;
+			}
+			targetUp++;
+		}
+		//target Ã¤ï¿½Îºï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¶ï¿½ï¿½ ï¿½ï¿½
+		flag = 0;
+		for (int i = 0; i < down.size(); i++) {
+			if (flag == 0)
+				for (int j = 0; j < 10; j++) {
+					if (remote[down[i] - 48] == -1)
+					{
+						flag++;
+						break;
+					}
+				}
+			else
+				break;
+		}
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+		if (flag == 0) {
+			if (ans > down.size() + targetChannel - targetDown)
+				ans = down.size() + targetChannel - targetDown;
+			downFlag++;
+		}
+		if (targetDown > 0) targetDown--;
+		if (upFlag || downFlag) break;	//ï¿½ï¿½ï¿½Îµï¿½ ï¿½Æ·ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ break
+		idx++;	//ï¿½ï¿½ È¤ï¿½ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È½ï¿½ï¿½ ï¿½ï¿½ï¿½(critï¿½ï¿½ ï¿½ñ±³¸ï¿½ ï¿½ï¿½ï¿½ï¿½)
+	}
+
+	cout << ans;
+
+	return 0;
+}

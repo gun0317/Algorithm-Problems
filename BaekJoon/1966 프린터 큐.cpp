@@ -1,49 +1,49 @@
-//#include <iostream>
-//#include <vector>
-//using namespace std;
-//int ans;
-//vector <pair <int,int> > v;
-//
-//int main() {
-//	int T; cin >> T;
-//	while (T--) {
-//		int N, idx, temp; cin >> N >> idx;
-//		v.clear();	//°¢ Å×½ºÆ® º° »õ·Î¿î vector ÀÌ¿ë
-//		for (int i = 0; i < N; i++) {
-//			cin >> temp;
-//			v.push_back(make_pair(0, temp));
-//		}
-//		v[idx].first = 1;	//ÀÌ¿ëÀÚ°¡ ¿øÇÏ´Â ÀÚ·áÀÓÀ» Ç¥½Ã
-//		
-//		ans = 0;
-//		while (1) {
-//			//Ã¹¹øÂ°¿Í ±× µÚÀÇ Áß¿äµµµéÀ» ºñ±³ÇØ¼­ Áß¿äµµ°¡ ´õ Å« ¿ø¼Ò°¡
-//			//ÇÏ³ª¶óµµ ÀÖÀ¸¸é Ã¹ ¿ø¼Ò¸¦ Á¦ÀÏ µÚ·Î º¸³¿ + flagÁõ°¡
-//			//Ã¹¿ø¼Ò°¡ Áß¿äµµ Á¦ÀÏ ³ôÀº°Å¸é flag=0
-//			int flag = 0;
-//			for (int i = 1; i < v.size(); i++) {
-//				if (v[0].second < v[i].second) {
-//					int tempFirst = v[0].first;	//Ã¹ ÀÚ·áÀÇ Á¤º¸ ÀúÀå(first)
-//					int tempSec = v[0].second;	//Ã¹ ÀÚ·áÀÇ Á¤º¸ ÀúÀå(second)
-//					v.erase(v.begin());	//Ã¹ ÀÚ·á¸¦ Áö¿ò
-//					v.push_back(make_pair(tempFirst, tempSec));	//Ã¹ ÀÚ·á¸¦ Á¦ÀÏ µÚ·Î º¸³¿
-//					flag++;
-//					break;
-//				}
-//			}
-//
-//			//flag°¡ 0, Áï Ã¹ ¿ø¼ÒÀÇ Áß¿äµµ°¡ Á© ³ôÀ»¶§.(print µÇ´Â °æ¿ì)
-//			if (!flag){
-//				ans++;
-//				if (v[0].first == 1)	//¸ñÇ¥ µµ´Þ->¹Ýº¹¹® break
-//					break;
-//				else 
-//					v.erase(v.begin());
-//			}
-//		}
-//
-//		cout << ans << endl;
-//	}
-//
-//	return 0;
-//}
+#include <iostream>
+#include <vector>
+using namespace std;
+int ans;
+vector <pair <int,int> > v;
+
+int main() {
+	int T; cin >> T;
+	while (T--) {
+		int N, idx, temp; cin >> N >> idx;
+		v.clear();	//ï¿½ï¿½ ï¿½×½ï¿½Æ® ï¿½ï¿½ ï¿½ï¿½ï¿½Î¿ï¿½ vector ï¿½Ì¿ï¿½
+		for (int i = 0; i < N; i++) {
+			cin >> temp;
+			v.push_back(make_pair(0, temp));
+		}
+		v[idx].first = 1;	//ï¿½Ì¿ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ú·ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
+		
+		ans = 0;
+		while (1) {
+			//Ã¹ï¿½ï¿½Â°ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß¿äµµï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ß¿äµµï¿½ï¿½ ï¿½ï¿½ Å« ï¿½ï¿½ï¿½Ò°ï¿½
+			//ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¹ ï¿½ï¿½ï¿½Ò¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½ï¿½ + flagï¿½ï¿½ï¿½ï¿½
+			//Ã¹ï¿½ï¿½ï¿½Ò°ï¿½ ï¿½ß¿äµµ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ flag=0
+			int flag = 0;
+			for (int i = 1; i < v.size(); i++) {
+				if (v[0].second < v[i].second) {
+					int tempFirst = v[0].first;	//Ã¹ ï¿½Ú·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(first)
+					int tempSec = v[0].second;	//Ã¹ ï¿½Ú·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(second)
+					v.erase(v.begin());	//Ã¹ ï¿½Ú·á¸¦ ï¿½ï¿½ï¿½ï¿½
+					v.push_back(make_pair(tempFirst, tempSec));	//Ã¹ ï¿½Ú·á¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½ï¿½
+					flag++;
+					break;
+				}
+			}
+
+			//flagï¿½ï¿½ 0, ï¿½ï¿½ Ã¹ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß¿äµµï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.(print ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½)
+			if (!flag){
+				ans++;
+				if (v[0].first == 1)	//ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½->ï¿½Ýºï¿½ï¿½ï¿½ break
+					break;
+				else 
+					v.erase(v.begin());
+			}
+		}
+
+		cout << ans << endl;
+	}
+
+	return 0;
+}
