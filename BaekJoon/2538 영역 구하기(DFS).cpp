@@ -1,57 +1,57 @@
-//#include <iostream>
-//#include <stack>
-//#include <algorithm>
-//#define pair pair <int,int>
-//using namespace std;
-//int M, N, K, toVisit[110][110], area[10000],idx;	//mapÀ» µû·Î ¹ÞÁö ¾Ê°í visit¿©ºÎ¸¦ Ç¥½ÃÇÏ´Â ±×·¡ÇÁ¸¸ ¹Þ´Â´Ù. Á÷»ç°¢ÇüÀ¸·Î µ¤ÀÌ´Â ºÎºÐÀº 1·Î, ºó °ø°£Àº 0À¸·Î ÀúÀå.
-//int dx[] = { 1,0,-1,0 };
-//int dy[] = { 0,1,0,-1 };	//¿òÁ÷ÀÓ Á¤ÀÇ
-//
-//void DFS(pair start) {
-//	stack <pair> s;
-//	s.push(start);
-//	toVisit[start.first][start.second] = 1;	//¹æ¹®ÇÑ ÃÊ±âÁöÁ¡ Ç¥½Ã
-//	area[idx]++;
-//	while (!s.empty()) {
-//		pair cur = s.top();
-//		s.pop();
-//
-//		for (int i = 0; i < 4; i++) {		//»óÇÏÁÂ¿ì Á¡À¸·Î ÀÌµ¿
-//			int newX = cur.first + dx[i];
-//			int newY = cur.second + dy[i];
-//
-//			if (!toVisit[newX][newY] && newX >= 0 && newY >= 0 && newX < N && newY < M) {	//boundary && ¹æ¹®¿©ºÎ check
-//				toVisit[newX][newY] = 1;
-//				area[idx]++;
-//				s.push(make_pair(newX, newY));
-//			}
-//		}
-//	}
-//	idx++;	//ÇÑ¹øÀÇ DFS°¡ ³¡³ª¸é ´Ù¸¥ ¿µ¿ªÀ» º¼ °ÍÀÌ¹Ç·Î areaÀÇ index¸¦ Áõ°¡½ÃÄÑ³õ´Â´Ù.
-//}
-//
-//int main() {
-//	cin >> M >> N >> K;
-//	int Lx, Ly, Rx, Ry, components =0;
-//	for (int i = 0; i < K; i++) {
-//		cin >> Lx >> Ly >> Rx >> Ry;
-//		for (int j = Lx; j <= Rx-1; j++)		//Á÷»ç°¢ÇüÀÇ ÁÂÇÏ´ÜÁ¡°ú ¿ì»ó´ÜÁ¡ÀÇ Á¤º¸¸¦ ÀÌ¿ëÇØ¼­
-//			for (int k = Ly; k <= Ry-1; k++)	//¹æ¹®ÇÏÁö ¾ÊÀ» ºÎºÐ(Á÷»ç°¢ÇüÀÌ ÀÌ¹Ì µ¤¿©ÀÖ´Â ºÎºÐ)À» 1·Î ±¸ºÐÇØ³õ´Â´Ù.
-//				toVisit[j][k] = 1;
-//	}
-//	for (int i = 0; i < N; i++)
-//		for (int j = 0; j < M; j++) 
-//			if (!toVisit[i][j])
-//			{
-//				components++;			//connected components¸¦ ¼¼´Â º¯¼ö
-//				DFS(make_pair(i, j));	//toVisit[i][j] = 0 ÀÎ Á¡À» ¹æ¹®ÇÏ¿© DFSÇÏ¸é¼­ area¸¦ °è»êÇÑ´Ù. ÀÌ¶§ ¹æ¹®ÇÑ °÷Àº 1·Î ¹Ù²ã¼­ ´Ù½Ã ¹æ¹®ÇÏÁö ¾Ê°Ô ÇÑ´Ù.
-//			}
-//
-//	sort(area, area + components);		//ÀúÀåÇØ³õÀº area¸¦ ¿À¸§Â÷ ¼øÀ¸·Î Á¤·Ä
-//
-//	cout << components << endl;
-//
-//	for (int i = 0; i < components; i++)
-//		cout << area[i] << " ";
-//	return 0;
-//}
+#include <iostream>
+#include <stack>
+#include <algorithm>
+#define pair pair <int,int>
+using namespace std;
+int M, N, K, toVisit[110][110], area[10000],idx;	//mapï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ visitï¿½ï¿½ï¿½Î¸ï¿½ Ç¥ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½×·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ´Â´ï¿½. ï¿½ï¿½ï¿½ç°¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½Îºï¿½ï¿½ï¿½ 1ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+int dx[] = { 1,0,-1,0 };
+int dy[] = { 0,1,0,-1 };	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+
+void DFS(pair start) {
+	stack <pair> s;
+	s.push(start);
+	toVisit[start.first][start.second] = 1;	//ï¿½æ¹®ï¿½ï¿½ ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
+	area[idx]++;
+	while (!s.empty()) {
+		pair cur = s.top();
+		s.pop();
+
+		for (int i = 0; i < 4; i++) {		//ï¿½ï¿½ï¿½ï¿½ï¿½Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
+			int newX = cur.first + dx[i];
+			int newY = cur.second + dy[i];
+
+			if (!toVisit[newX][newY] && newX >= 0 && newY >= 0 && newX < N && newY < M) {	//boundary && ï¿½æ¹®ï¿½ï¿½ï¿½ï¿½ check
+				toVisit[newX][newY] = 1;
+				area[idx]++;
+				s.push(make_pair(newX, newY));
+			}
+		}
+	}
+	idx++;	//ï¿½Ñ¹ï¿½ï¿½ï¿½ DFSï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¹Ç·ï¿½ areaï¿½ï¿½ indexï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ³ï¿½ï¿½Â´ï¿½.
+}
+
+int main() {
+	cin >> M >> N >> K;
+	int Lx, Ly, Rx, Ry, components =0;
+	for (int i = 0; i < K; i++) {
+		cin >> Lx >> Ly >> Rx >> Ry;
+		for (int j = Lx; j <= Rx-1; j++)		//ï¿½ï¿½ï¿½ç°¢ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ø¼ï¿½
+			for (int k = Ly; k <= Ry-1; k++)	//ï¿½æ¹®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½(ï¿½ï¿½ï¿½ç°¢ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Îºï¿½)ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø³ï¿½ï¿½Â´ï¿½.
+				toVisit[j][k] = 1;
+	}
+	for (int i = 0; i < N; i++)
+		for (int j = 0; j < M; j++) 
+			if (!toVisit[i][j])
+			{
+				components++;			//connected componentsï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+				DFS(make_pair(i, j));	//toVisit[i][j] = 0 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½æ¹®ï¿½Ï¿ï¿½ DFSï¿½Ï¸é¼­ areaï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½. ï¿½Ì¶ï¿½ ï¿½æ¹®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½Ù²ã¼­ ï¿½Ù½ï¿½ ï¿½æ¹®ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½Ñ´ï¿½.
+			}
+
+	sort(area, area + components);		//ï¿½ï¿½ï¿½ï¿½ï¿½Ø³ï¿½ï¿½ï¿½ areaï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+
+	cout << components << endl;
+
+	for (int i = 0; i < components; i++)
+		cout << area[i] << " ";
+	return 0;
+}
