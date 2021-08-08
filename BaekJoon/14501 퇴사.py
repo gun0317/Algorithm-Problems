@@ -5,7 +5,7 @@ time = [0]
 price = [0]
 ans = 0
 for day in range(1, N + 1):
-    t, p = map(int, input().split())
+    t, p = map(int,     input().split())
     time.append(t)
     price.append(p)
 
